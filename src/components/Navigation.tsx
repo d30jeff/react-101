@@ -1,3 +1,4 @@
+import { routes } from '@/routes';
 import { FC, PropsWithChildren } from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -9,7 +10,12 @@ export const Navigation: FC<PropsWithChildren> = () => {
       </NavLink>
 
       <div className="ml-auto flex gap-x-[10px]">
-        <NavLink to={{ pathname: '/cats' }} className="p-[10px]">Cats</NavLink>
+        {routes.filter(route => {
+          return !route.hideFromNavigation
+        }).map(route => {
+          return <NavLink to={{ pathname: route.path }} className="p-[10px]" key={route.path}>{route.name}</NavLink>
+        })}
+
       </div>
     </nav>
   );
