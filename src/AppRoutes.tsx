@@ -16,6 +16,8 @@ export const AppRoutes: FC<PropsWithChildren<Props>> = (props) => {
         <Route path='/awesome-cats' element={<AwesomeCatsPage />} />
         <Route path='/cats/:ID' element={<CatDetailsPage />} />
         */}
+
+        {/* Same as above ^ , just kidding, not the same. This is cooler */}
         {routes.map(route => {
           return <Route path={route.path} element={<route.component />} key={route.path} />
         })}

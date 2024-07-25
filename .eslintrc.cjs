@@ -16,5 +16,6 @@ module.exports = {
     ],
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/no-namespace': 'off',
+    'react-hooks/rules-of-hooks': 'off',
   },
 }

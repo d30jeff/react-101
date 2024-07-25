@@ -33,6 +33,7 @@ export default function CatsPage(props: Props) {
   return (
     <main>
       <h1>Cats page</h1>
+
       {isLoading && (
         <Loader />
       )}
