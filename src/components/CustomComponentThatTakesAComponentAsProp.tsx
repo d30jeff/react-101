@@ -4,11 +4,12 @@ type Props = {
   element: ReactElement
 };
 
-export const ElementWrapper: FC<PropsWithChildren<Props>> = (props) => {
+export const CustomComponentThatTakesAComponentAsProp: FC<PropsWithChildren<Props>> = (props) => {
   const { element } = props;
 
   return (
     <div>
+      <h1 className="font-semibold">Here is your component</h1>
       {element}
     </div>
   );

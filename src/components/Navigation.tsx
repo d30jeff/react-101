@@ -1,6 +1,7 @@
 import { routes } from '@/routes';
 import { FC, PropsWithChildren } from 'react';
 import { NavLink } from 'react-router-dom';
+import { twMerge } from 'tailwind-merge';
 
 export const Navigation: FC<PropsWithChildren> = () => {
   return (
@@ -13,7 +14,10 @@ export const Navigation: FC<PropsWithChildren> = () => {
         {routes.filter(route => {
           return !route.hideFromNavigation
         }).map(route => {
-          return <NavLink to={{ pathname: route.path }} className="p-[10px]" key={route.path}>{route.name}</NavLink>
+          return <NavLink to={{ pathname: route.path }}
+            className={({ isActive }) => {
+              return twMerge(isActive ? 'bg-red-500' : '', 'p-[10px]')
+            }} key={route.path}>{route.name}</NavLink>
         })}
 
       </div>

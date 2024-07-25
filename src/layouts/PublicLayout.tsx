@@ -8,7 +8,6 @@ export const PublicLayout: FC<PropsWithChildren<Props>> = (props) => {
   return (
     <Fragment>
       <Navigation />
-
       <Container>
         <Outlet />
       </Container>

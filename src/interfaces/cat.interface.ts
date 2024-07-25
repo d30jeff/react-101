@@ -9,6 +9,6 @@ export namespace Cat {
       height: number;
     }
 
-    export type Params = Request.PaginationParams
+    export type Params = Request.PaginationParams;
   }
 }
